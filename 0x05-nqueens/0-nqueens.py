@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_safe(board, row, col):
     """ Check if a queen can be placed on board at (row, col). """
     for i in range(col):
         if board[row][i] == 1:
             return False
-        
+
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
-        
+
     for i, j in zip(range(row, len(board), 1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
-        
+
     return True
 
 
@@ -22,10 +23,11 @@ def solve_nqueens(board, col, solutions):
     """ Solve the N-Queens problem using backtracking. """
     if col == len(board):
         solutions.append(
-            [[r, c] for r in range(len(board)) for c in range(len(board)) if board[r][c] == 1]
+            [[r, c] for r in range(len(board))
+             for c in range(len(board)) if board[r][c] == 1]
         )
         return
-    
+
     for i in range(len(board)):
         if is_safe(board, i, col):
             board[i][col] = 1
