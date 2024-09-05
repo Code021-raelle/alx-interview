@@ -5,6 +5,9 @@ This module determines the winner of a prime game between Maria and Ben.
 
 
 def isWinner(x, nums):
+    """
+    Determins the winner of a prime game
+    """
     if x < 1 or not nums:
         return None
 
