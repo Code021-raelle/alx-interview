@@ -7,7 +7,7 @@ This module determines the winner of a prime game between Maria and Ben.
 def isWinner(x, nums):
     if x < 1 or not nums:
         return None
-    
+
     max_n = max(nums)
     primes = [True] * (max_n + 1)
     primes[0] = primes[1] = False
